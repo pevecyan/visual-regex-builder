@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Fluffy_Potato
+namespace vrb
 {
     /// <summary>
     /// Interaction logic for ExpressionElementSelectable.xaml

@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="vrb.ExpressionElement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:vrb"
+             mc:Ignorable="d" 
+             d:DesignHeight="105" d:DesignWidth="360" Margin="10,10,10,0" Height="Auto">
+    <Grid Margin="0">
+        <Grid Margin="0">
+            <Rectangle Fill="#FF323232" HorizontalAlignment="Left" Margin="5,0,0,0" Width="15" Height="15" RadiusX="5" RadiusY="5"/>
+            <Rectangle Fill="#FF4FC1DE" HorizontalAlignment="Left" Margin="10,17.5,0,17.5" Width="5" Height="5" RadiusX="5" RadiusY="5"/>
+            <Rectangle Fill="#FFC8C8C8" HorizontalAlignment="Left" Margin="45,0,0,0" Width="10" Height="10" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Grid Background="#FFC8C8C8" Margin="50,0,0,0" d:LayoutOverrides="Width">
+                <StackPanel Margin="0" d:LayoutOverrides="Height">
+                    <Grid Margin="10,10,10,0" d:LayoutOverrides="LeftPosition, RightPosition">
+                        <TextBlock x:Name="ExpressionNameText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ExpressionName" FontSize="14.667" FontFamily="Segoe UI Semibold"/>
+                        <Button x:Name="RemoveButton" Content="x" HorizontalAlignment="Right" Width="16" BorderThickness="0" Background="#FFC95050" Padding="0,-3,0,0" FontWeight="Bold" FontFamily="Segoe UI Semibold" Click="RemoveButton_Click"/>
+                        <Button x:Name="DownButton" Content="v" HorizontalAlignment="Right" Margin="0,0,20,0" Width="16" BorderThickness="0" Background="#FFABADB3" Padding="0,-3,0,0" FontWeight="Bold" FontFamily="Segoe UI Semibold" Click="DownButton_Click"/>
+                        <Button x:Name="UpButton" Content="v" HorizontalAlignment="Right" Margin="0,0,40,0" Width="16" BorderThickness="0" Background="#FFABADB3" Padding="0,-3,0,0" FontWeight="Bold" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.5,0.5" Click="UpButton_Click">
+                            <Button.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Button.RenderTransform>
+                        </Button>
+                    </Grid>
+                    <Grid VerticalAlignment="Bottom" d:LayoutOverrides="LeftPosition, RightPosition" Margin="5,10">
+                        <Rectangle Margin="5,0" Fill="White" RadiusX="2" RadiusY="2"/>
+                        <TextBox x:Name="ExpressionValueText" Margin="10,1" TextWrapping="Wrap" VerticalAlignment="Bottom" BorderBrush="{x:Null}" FontSize="14.667" BorderThickness="0" Height="22"/>
+                    </Grid>
+                    <Rectangle Fill="#3F000000" Height="3" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>
